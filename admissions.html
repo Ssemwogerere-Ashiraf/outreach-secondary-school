@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admissions - Outreach Secondary School</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="/image/x-icon" href="favicon-32x32.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="bg-light shadow-sm">
+     <a style="color: rgb(255, 200, 0); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger; margin-top: auto;"> <img src="logo.png" alt="Outreach Logo" class="logo">
+    <strong><b style="font-weight: bolder; font-size: xx-large; color: red;">O</b>UTREACH <b  style="font-weight: bolder; font-size: xx-large; color: red;">S</b>ECONDARY <b  style="font-weight: bolder; font-size: xx-large; color: red;">S</b>CHOOL</strong>
+      </a>
+  <nav class="navbar navbar-light container position-relative">
+    <a class="navbar-brand fw-bold" href="index.html"></a>
+    <button class="navbar-toggler" type="button" onclick="toggleMenu()" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <!-- Custom Nav Overlay -->
+  <div id="navOverlay" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-75 d-flex justify-content-center align-items-center z-3">
+    <div class="bg-white bg-opacity-75 rounded p-4 text-center">
+      <a href="index.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Home</a>
+      <a href="news.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">News</a>
+      <a href="gallery.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Gallery</a>
+      <a href="contact.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Contact</a>
+      <a href="admissions.html" class="d-block nav-link fw-bold" onclick="closeMenu()">Admissions</a>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Title -->
+  <section class="bg-success text-white text-center py-5">
+    <div class="container">
+      <h2 class="display-5"><strong>Admissions</strong></h2>
+      <p class="lead">Join our inclusive and values-driven learning community.</p>
+    </div>
+  </section>
+
+  <!-- Admissions Info -->
+  <main class="container py-5">
+    <div class="row g-4">
+
+      <div class="col-md-6">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h4 class="fw-bold" style="color: blue;">Admission Requirements</h4>
+          <ul class="list-unstyled mt-3">
+            <li>✔ Completed PLE or UCE certificate</li>
+            <li>✔ Recommendation from previous school</li>
+            <li>✔ Parent/guardian national ID copy</li>
+            <li>✔ Two passport-size photos</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h4 class="fw-bold" style="color: blue;">Key Dates</h4>
+          <ul class="list-unstyled mt-3">
+            <li>📅 Application opens: January 10, 2026</li>
+            <li>📅 Interviews: February 5–10, 2026</li>
+            <li>📅 Admission results: February 15, 2026</li>
+            <li>📅 Term begins: March 4, 2026</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- fees structure -->
+     <section class="container py-5" id="fees">
+  <h3 class="text-center mb-4" style="color: red;">School Fees Structure 2025</h3>
+  <table class="table table-bordered">
+    <thead class="table-dark">
+      <tr><th>Class</th><th>Term I</th><th>Term II</th><th>Term III</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>S.1 - S.3</td><td>UGX 650,000</td><td>UGX 600,000</td><td>UGX 550,000</td><td>UGX 1,800,000</td></tr>
+      <tr><td>S.4 - S.6</td><td>UGX 750,000</td><td>UGX 700,000</td><td>UGX 650,000</td><td>UGX 2,100,000</td></tr>
+    </tbody>
+  </table>
+  <p class="small text-muted">Includes tuition, meals, library, and ICT access. Uniform and exam fees charged separately.</p>
+</section>
+
+
+    <!-- Call to Action -->
+    <div class="text-center mt-5">
+      <a href="admissions-wizzard.html" class="btn btn-warning btn-lg">Start Application</a>
+    </div>
+  </main>
+
+     <!-- Footer -->
+  <footer class="bg-light text-center py-3 small text-muted">
+      <div class="container">
+        <p><b>Contact Us!!</b></p>
+    <p class="mb-1">📞 Headteacher: Mr. Ssemakula David – +256 701 234567</p>
+    <p class="mb-1">📞 Deputy Headteacher: Ms. Namukasa Grace – +256 772 345678</p>
+    <p class="mb-1">📞 Director of Studies: Mr. Kato Emmanuel – +256 784 456789</p>
+     <br>
+    &copy; 2025 Outreach Secondary School. All rights reserved.
+    <p>Email: info@outreachschool.org | Tel: +256 701 422 100</p>
+    <p>Location: Baggala, Mpigi District, Uganda</p>
+  </footer>
+
+<button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" 
+        class="btn btn-warning position-fixed bottom-0 end-0 m-4 shadow" 
+        aria-label="Back to top">
+  ⬆ Top
+</button>
+
+<!-- script -->
+ <script>
+  function toggleMenu() {
+    document.getElementById("navOverlay").classList.remove("d-none");
+  }
+
+  function closeMenu() {
+    document.getElementById("navOverlay").classList.add("d-none");
+  }
+</script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

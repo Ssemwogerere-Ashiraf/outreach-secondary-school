@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>School Rules & Regulations - Outreach SS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="/image/x-icon" href="favicon-32x32.png">
+   <!-- bootstrap cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+
+  <style>
+    /* body { min-height: 100vh; display: flex; flex-direction: column; } */
+    main { flex: 1; display: flex; align-items: center; justify-content: center; }
+    .pdf-box {
+      width: 100%; max-width: 900px; height: 90vh;
+      border: 1px solid #ccc; border-radius: 8px; overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1); */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- header -->
+ <header class="bg-light shadow-sm" style="padding: 0; margin-bottom: 0%; background-color: rgb(244, 197, 6);">
+     <a style="color: rgb(255, 200, 0); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger; margin-top: auto;"> <img src="logo.png" alt="Outreach Logo" class="logo">
+    <strong><b style="font-weight: bolder; font-size: xx-large; color: red;">O</b>UTREACH <b  style="font-weight: bolder; font-size: xx-large; color: red;">S</b>ECONDARY <b  style="font-weight: bolder; font-size: xx-large; color: red;">S</b>CHOOL</strong>
+      </a>
+  <nav class="navbar navbar-light container position-relative" style="margin-top: 10px;">
+    <a class="navbar-brand fw-bold" href="index.html"></a>
+    <button class="navbar-toggler" type="button" onclick="toggleMenu()" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <!-- Custom Nav Overlay -->
+  <div id="navOverlay" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-75 d-flex justify-content-center align-items-center z-3">
+    <div class="bg-white bg-opacity-75 rounded p-4 text-center">
+      <a href="index.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Home</a>
+      <a href="news.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">News</a>
+      <a href="gallery.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Gallery</a>
+      <a href="contact.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Contact</a>
+      <a href="admissions.html" class="d-block nav-link fw-bold" onclick="closeMenu()">Admissions</a>
+    </div>
+  </div>
+</header>
+
+  <main class="container py-4">
+    <div class="pdf-box">
+      <!-- Embed PDF so it opens directly in the browser -->
+      <embed src="rules.pdf" type="application/pdf" width="100%" height="100%">
+      <!-- Alternative using iframe -->
+      <!-- <iframe src="rules.pdf" width="100%" height="100%" style="border:none;"></iframe> -->
+    </div>
+  </main>
+
+    <!-- Footer -->
+  <footer class="bg-light text-center py-3 small text-muted">
+      <div class="container">
+        <p><b>Contact Us!!</b></p>
+    <p class="mb-1">📞 Headteacher: Mr. Ssemakula David - +256 701 234567</p>
+    <p class="mb-1">📞 Deputy Headteacher: Ms. Namukasa Grace - +256 772 345678</p>
+    <p class="mb-1">📞 Director of Studies: Mr. Kato Emmanuel - +256 784 456789</p>
+     <br>
+    &copy; 2025 Outreach Secondary School. All rights reserved.
+    <p>Email: info@outreachschool.org | Tel: +256 701 422 100</p>
+    <p>Location: Baggala, Mpigi District, Uganda</p>
+  </footer>
+
+    <!-- script -->
+   <script>
+  function toggleMenu() {
+    document.getElementById("navOverlay").classList.remove("d-none");
+  }
+
+  function closeMenu() {
+    document.getElementById("navOverlay").classList.add("d-none");
+  }
+</script>
+
+<!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

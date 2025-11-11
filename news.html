@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>News & Events – Outreach Secondary School</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="bg-light shadow-sm">
+  <nav class="navbar navbar-light container position-relative">
+    <a class="navbar-brand fw-bold" href="index.html">Outreach SS</a>
+    <button class="navbar-toggler" type="button" onclick="toggleMenu()" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <!-- Custom Nav Overlay -->
+  <div id="navOverlay" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-75 d-flex justify-content-center align-items-center z-3">
+    <div class="bg-white bg-opacity-75 rounded p-4 text-center">
+      <a href="index.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Home</a>
+      <a href="news.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">News</a>
+      <a href="gallery.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Gallery</a>
+      <a href="contact.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Contact</a>
+      <a href="admissions.html" class="d-block nav-link fw-bold" onclick="closeMenu()">Admissions</a>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Title -->
+  <section class="bg-primary text-white text-center py-5">
+    <div class="container">
+      <h2 class="display-5">News & Events</h2>
+      <p class="lead">Stay updated with our latest announcements, projects, and celebrations.</p>
+    </div>
+  </section>
+
+  <!-- News Cards -->
+  <main class="container py-5">
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="roofing.jpg" class="card-img-top" alt="Dormitory construction">
+          <div class="card-body">
+            <h5 class="card-title">Dormitory Block Near Completion</h5>
+            <p class="card-text">Our new girls' dormitory is now at roofing stage. This project will improve boarding facilities and safety.</p>
+            <span class="badge bg-success">Infrastructure</span>
+          </div>
+          <div class="card-footer text-muted small">Posted: Nov 5, 2025</div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="teacher-training.jpg" class="card-img-top" alt="ICT training">
+          <div class="card-body">
+            <h5 class="card-title">ICT Training for Teachers</h5>
+            <p class="card-text">Teachers completed a 3-day workshop on digital tools and e-learning platforms to enhance classroom delivery.</p>
+            <span class="badge bg-info text-dark">Training</span>
+          </div>
+          <div class="card-footer text-muted small">Posted: Oct 28, 2025</div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="solar irrigation.jpg" class="card-img-top" alt="Science fair">
+          <div class="card-body">
+            <h5 class="card-title">Annual Science Fair</h5>
+            <p class="card-text">Students showcased innovative projects including solar-powered irrigation and mobile lab kits.</p>
+            <span class="badge bg-warning text-dark">Events</span>
+          </div>
+          <div class="card-footer text-muted small">Posted: Oct 15, 2025</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+    <!-- Footer -->
+  <footer class="bg-light text-center py-3 small text-muted">
+      <div class="container">
+        <p><b>Contact Us!!</b></p>
+    <p class="mb-1">📞 Headteacher: Mr. Ssemakula David – +256 701 234567</p>
+    <p class="mb-1">📞 Deputy Headteacher: Ms. Namukasa Grace – +256 772 345678</p>
+    <p class="mb-1">📞 Director of Studies: Mr. Kato Emmanuel – +256 784 456789</p>
+     <br>
+    &copy; 2025 Outreach Secondary School. All rights reserved.
+    <p>Email: info@outreachschool.org | Tel: +256 701 422 100</p>
+    <p>Location: Baggala, Mpigi District, Uganda</p>
+  </footer>
+  <!-- script -->
+   <script>
+  function toggleMenu() {
+    document.getElementById("navOverlay").classList.remove("d-none");
+  }
+
+  function closeMenu() {
+    document.getElementById("navOverlay").classList.add("d-none");
+  }
+</script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

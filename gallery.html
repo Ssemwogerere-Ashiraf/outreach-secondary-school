@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery - Outreach Secondary School</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="/image/x-icon" href="favicon-32x32.png">
+ <!-- bootstrap cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  .col-md-6 {
+  transition: opacity 0.3s ease;
+}
+
+</style>
+<body>
+
+  <!-- Header -->
+<header class="bg-light shadow-sm">
+       <a style="color: rgb(255, 200, 0); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger; margin-top: auto;"> <img src="logo.png" alt="Outreach Logo" class="logo">
+    <strong><b style="font-weight: bolder; font-size: xx-large; color: red;">O</b>UTREACH <b  style="font-weight: bolder; font-size: xx-large; color: red;">S</b>ECONDARY <b  style="font-weight: bolder; font-size: xx-large; color: red;">S</b>CHOOL</strong>
+      </a>
+  <nav class="navbar navbar-light container position-relative">
+    <a class="navbar-brand fw-bold" href="index.html"></a>
+    <button class="navbar-toggler" type="button" onclick="toggleMenu()" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <!-- Custom Nav Overlay -->
+  <div id="navOverlay" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-75 d-flex justify-content-center align-items-center z-3">
+    <div class="bg-white bg-opacity-75 rounded p-4 text-center">
+      <a href="index.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Home</a>
+      <a href="news.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">News</a>
+      <a href="gallery.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Gallery</a>
+      <a href="contact.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Contact</a>
+      <a href="admissions.html" class="d-block nav-link fw-bold" onclick="closeMenu()">Admissions</a>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Title -->
+  <section class="bg-primary text-white text-center py-5">
+    <div class="container">
+      <h2 class="display-5"><b>School Gallery</b></h2>
+      <p class="lead">Snapshots of our campus, projects, and student life.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <main class="container py-5">
+    <div id="galleryPage1" class="row g-4">
+
+      <div class="col-md-6 col-lg-4" data-category="infrastructure">
+        <div class="card shadow-sm">
+          <img src="dorm.webp" class="card-img-top" alt="Dormitory under construction">
+          <div class="card-body">
+            <h5 class="card-title">Dormitory Construction</h5>
+            <p class="card-text small">Block A at roofing stage</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-category="infrastructure">
+        <div class="card shadow-sm">
+          <img src="computer_lab.jpeg" class="card-img-top" alt="Computer lab setup">
+          <div class="card-body">
+            <h5 class="card-title">Computer Lab</h5>
+            <p class="card-text small">Desks and wiring installed</p>
+          </div>
+        </div>
+      </div>
+
+       <div class="col-md-6 col-lg-4" data-category="events">
+        <div class="card shadow-sm">
+          <img src="football-team.jpeg" class="card-img-top" alt="School Team">
+          <div class="card-body">
+            <h5 class="card-title">Football Team</h5>
+            <p class="card-text small">Champions of Regional League 2024</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-category="events">
+        <div class="card shadow-sm">
+          <img src="debate contest.jpg" class="card-img-top" alt="School Debate Contest">
+          <div class="card-body">
+            <h5 class="card-title">National Debate Contest</h5>
+            <p class="card-text small">Winners of the NDC 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-category="events">
+        <div class="card shadow-sm">
+          <img src="kindergarten.webp" class="card-img-top" alt="kindergarten Section">
+          <div class="card-body">
+            <h5 class="card-title">Kindergarten Section</h5>
+            <p class="card-text small">Proper upbringing of children!</p>
+          </div>
+        </div>
+        </div>
+      
+
+      <div class="col-md-6 col-lg-4" data-category="events">
+        <div class="card shadow-sm">
+          <img src="voc.webp" class="card-img-top" alt="vocational Training">
+          <div class="card-body">
+            <h5 class="card-title">Vocational Section</h5>
+            <p class="card-text small">Promoting Vocational Skills</p>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <!-- Spacer -->
+<div class="my-5 text-center">
+  <hr class="w-50 mx-auto">
+  <p class="text-muted small">— End of Page 1 —</p>
+</div>
+
+      <div id="galleryPage2" class="row g-4">
+        <div class="col-md-6 col-lg-4" data-category="events">
+        <div class="card shadow-sm">
+          <img src="orphanage1.jpg" class="card-img-top" alt="Orphanage for learners with special needs" height="180">
+          <div class="card-body">
+            <h5 class="card-title">Orphanage</h5>
+            <p class="card-text small">Promoting special needs education</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-category="events">
+        <div class="card shadow-sm">
+          <img src="debate contest.jpg" class="card-img-top" alt="School Debate Contest">
+          <div class="card-body">
+            <h5 class="card-title">National Debate Contest</h5>
+            <p class="card-text small">Winners of the NDC 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-category="events">
+        <div class="card shadow-sm">
+          <img src="debate contest.jpg" class="card-img-top" alt="School Debate Contest">
+          <div class="card-body">
+            <h5 class="card-title">National Debate Contest</h5>
+            <p class="card-text small">Winners of the NDC 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-category="events">
+        <div class="card shadow-sm">
+          <img src="debate contest.jpg" class="card-img-top" alt="School Debate Contest">
+          <div class="card-body">
+            <h5 class="card-title">National Debate Contest</h5>
+            <p class="card-text small">Winners of the NDC 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-category="events">
+        <div class="card shadow-sm">
+          <img src="chemistry prac.webp" class="card-img-top" alt="Science fair project" height="180">
+          <div class="card-body">
+            <h5 class="card-title">UCE Final Exams 2024</h5>
+            <p class="card-text small">Chemistry Practicals</p>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Lightbox Modal -->
+<div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark">
+      <div class="modal-body p-0">
+        <img src="" id="lightboxImage" class="img-fluid w-100" alt="Full image">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center mb-4">
+  <button class="btn btn-outline-primary me-2" onclick="filterGallery('all')">All</button>
+  <button class="btn btn-outline-success me-2" onclick="filterGallery('infrastructure')">Infrastructure</button>
+  <button class="btn btn-outline-warning me-2" onclick="filterGallery('events')">Events</button>
+</div>
+
+    <!-- Footer -->
+  <footer class="bg-light text-center py-3 small text-muted">
+      <div class="container">
+        <p><b>Contact Us!!</b></p>
+    <p class="mb-1">📞 Headteacher: Mr. Ssemakula David – +256 701 234567</p>
+    <p class="mb-1">📞 Deputy Headteacher: Ms. Namukasa Grace – +256 772 345678</p>
+    <p class="mb-1">📞 Director of Studies: Mr. Kato Emmanuel – +256 784 456789</p>
+     <br>
+    &copy; 2025 Outreach Secondary School. All rights reserved.
+    <p>Email: info@outreachschool.org | Tel: +256 701 422 100</p>
+    <p>Location: Baggala, Mpigi District, Uganda</p>
+  </footer>
+
+  <script>
+  document.querySelectorAll('.card-img-top').forEach(img => {
+    img.addEventListener('click', () => {
+      document.getElementById('lightboxImage').src = img.src;
+      new bootstrap.Modal(document.getElementById('lightboxModal')).show();
+    });
+  });
+
+
+  function filterGallery(category) {
+    // Select all gallery items across both pages
+    const items = document.querySelectorAll('#galleryPage1 .col-md-6, #galleryPage2 .col-md-6');
+
+    items.forEach(item => {
+      const itemCategory = item.getAttribute('data-category');
+      if (category === 'all' || itemCategory === category) {
+        item.style.display = 'block';   // show
+      } else {
+        item.style.display = 'none';    // hide
+      }
+    });
+  }
+
+  function toggleMenu() {
+    document.getElementById("navOverlay").classList.remove("d-none");
+  }
+
+  function closeMenu() {
+    document.getElementById("navOverlay").classList.add("d-none");
+  }
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Outreach Secondary School - Admissions, News, Gallery, Contact">
+<meta name="keywords" content="Outreach SS, Uganda, secondary school, education, Nkozi">
+  <title>Outreach Secondary School</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="/image/x-icon" href="favicon-32x32.png">
+ <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
+<script src="script.js" defer></script>
+
+</head>
+<body>
+<!-- Preloader -->
+<div id="preloader">
+  <div class="overlay-text">
+    <h2 id="loadingMessage">Loading...</h2>
+  </div>
+  <div class="spinner-border text-light mt-3" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+  <header>
+   <p style="color: rgb(255, 255, 255); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger; margin-top: auto;"> <img src="logo.png" alt="Outreach Logo" class="logo">
+    <strong><b style="font-weight: bolder; font-size: xx-large;">O</b>UTREACH <b>S</b>ECONDARY <b>S</b>CHOOL</strong>
+    </p>
+    <nav class="navbar navbar-light container position-relative">
+    <a class="navbar-brand fw-bold" href="index.html"></a>
+    <button class="navbar-toggler" type="button" onclick="toggleMenu()" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <!-- Custom Nav Overlay -->
+  <div id="navOverlay" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-75 d-flex justify-content-center align-items-center z-3">
+    <div class="bg-white bg-opacity-75 rounded p-4 text-center">
+      <a href="index.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Home</a>
+      <a href="news.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">News</a>
+      <a href="gallery.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Gallery</a>
+      <a href="contact.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Contact</a>
+      <a href="admissions.html" class="d-block nav-link fw-bold" onclick="closeMenu()">Admissions</a>
+    </div>
+  </div>
+   <form action="search.html" method="GET">
+  <input type="search" name="q" class="form-control form-control-sm" placeholder="Search site...">
+</form> 
+</header>
+  <!-- <section class="hero">
+    <div class="hero-div" style="background-color: rgba(12, 14, 16, 0.619);">
+      <h1>Welcome to Outreach Secondary School</h1>
+    <p>Empowering communities through inclusive education and innovation.</p>
+    <a href="admissions-wizzard.html" class="btn">Apply Now</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="contact.html" class="btn">Contact Us</a>
+
+  
+</div>
+</section> -->
+
+<!-- hero slide -->
+<section class="position-relative vh-100 overflow-hidden">
+  <div class="carousel slide carousel-fade h-100" id="heroCarousel" data-bs-ride="carousel">
+    <div class="carousel-inner h-100">
+
+      <div class="carousel-item active h-100" style="background-image: url('School_Administration_block.jpg'); background-size: cover; background-position: center;">
+        <div class="d-flex h-100 align-items-center justify-content-center bg-dark bg-opacity-50 text-center text-white px-3">
+          <div class="container"  style="background-color: rgba(0, 0, 0, 0.591);">
+            <h1 class="display-4 fw-bold">Welcome to Outreach Secondary School</h1>
+            <p class="lead">We are delighted to have you join our vibrant learning community.</p>
+            <a href="admissions.html" class="btn btn-warning btn-lg">Apply Now</a><br><br>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item h-100" style="background-image: url('ICT.jpg'); background-size: cover; background-position: center;">
+        <div class="d-flex h-100 align-items-center justify-content-center bg-dark bg-opacity-50 text-center text-white px-3">
+          <div class="container"  style="background-color: rgba(0, 0, 0, 0.591);">
+            <h1 class="display-4 fw-bold">Practical Skills for Real Life</h1>
+            <p class="lead">ICT, vocational training, and community engagement.</p>
+            <a href="about.html" class="btn btn-warning btn-lg">Learn More</a><br><br>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item h-100" style="background-image: url('hero3.jpeg'); background-size: cover; background-position: center;">
+        <div class="d-flex h-100 align-items-center justify-content-center bg-dark bg-opacity-50 text-center text-white px-3">
+          <div class="container" style="background-color: rgba(0, 0, 0, 0.591);">
+            <h1 class="display-4 fw-bold">Inclusive Education for All</h1>
+            <p class="lead">Supporting learners with disabilities and diverse needs.</p>
+            <a href="contact.html" class="btn btn-warning btn-lg">Get Involved</a><br><br>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation arrows -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+
+    <div class="card" id="open-info" style="color: rgb(250, 67, 6); background-color: rgba(255, 255, 255, 0.317);">
+  <strong>Opening in</strong>
+  <div id="countdown" class="small" style="display: flexbox; color: rgb(255, 142, 4); margin: 0px;"><strong>Loading...</strong></div>
+</div>
+
+
+ <div class="card">
+  <h3>About Outreach Secondary School</h3>
+  <p>Outreach Secondary School is a community-led institution offering inclusive secondary education that blends strong academics with vocational training, ICT, and pastoral support to empower learners for life and work.</p>
+  <a class="btn" href="about.html">Learn more</a>
+</div>
+
+  <section id="projects">
+    <h2>Ongoing Projects</h2>
+    <div class="project-gallery">
+      <div><img src="dorm.webp" alt="Dormitory Construction">
+        <p style="text-align: center; color: pink;"><strong>Dormitory Construction</strong></p>
+      </div>
+     <div><img src="computer_lab.jpeg" alt="Computer Lab">
+         <p style="text-align: center; color: pink;"><strong>Our Computer Laboratory</strong></p>
+    </div>
+      <div><img src="school_farm.jpg" alt="School Farm">
+           <p style="text-align: center; color: pink;"><strong>Our School Farm</strong></p>
+      </div>
+
+      <div><img src="School_Administration_block.jpg" alt="School Farm">
+           <p style="text-align: center; color: pink;"><strong>School Administration Block</strong></p>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-light py-5">
+  <div class="container">
+    <h3 class="text-center mb-4">What Our Community Says</h3>
+
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="p-4 bg-white border rounded shadow-sm text-center">
+            <p class="fst-italic">“Outreach SS gave me confidence to speak and lead. The debate club changed my life.”</p>
+            <p class="fw-bold mb-0">Akankwatsa Prosper, Head Prefect</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="p-4 bg-white border rounded shadow-sm text-center">
+            <p class="fst-italic">“As a parent, I'm grateful for the inclusive support my daughter receives. This school truly cares.”</p>
+            <p class="fw-bold mb-0">Mrs. Nalubega, Parent</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="p-4 bg-white border rounded shadow-sm text-center">
+            <p class="fst-italic">“The science fair helped me discover my passion for engineering. I'll never forget that moment.”</p>
+            <p class="fw-bold mb-0">Daniel, S4 Student</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="container py-5" id="calendar">
+  <h3 class="text-center mb-4">Academic Calendar - 2025</h3>
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Term</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Term I</td>
+        <td>February 10, 2025</td>
+        <td>May 9, 2025</td>
+        <td>Senior One begins</td>
+      </tr>
+      <tr>
+        <td>Term II</td>
+        <td>June 2, 2025</td>
+        <td>August 29, 2025</td>
+        <td>Mid-year assessments</td>
+      </tr>
+      <tr>
+        <td>Term III</td>
+        <td>September 15, 2025</td>
+        <td>December 5, 2025</td>
+        <td>National exams period</td>
+      </tr>
+
+      <tr>
+  <td>Mock Exams</td>
+  <td>July 14, 2025</td>
+  <td>July 25, 2025</td>
+  <td>Senior Four and Senior Six preparation</td>
+</tr>
+<tr>
+  <td>Speech Day</td>
+  <td>October 18, 2025</td>
+  <td>October 18, 2025</td>
+  <td>Annual celebration and awards ceremony</td>
+</tr>
+<tr>
+  <td>Holiday Break</td>
+  <td>December 6, 2025</td>
+  <td>January 9, 2026</td>
+  <td>End-of-year vacation</td>
+</tr>
+
+    </tbody>
+  </table>
+</section>
+
+      <!-- Quick Links -->
+
+  <section id="quick-links" class="bg-light text-center py-3 small text-muted">
+    <h2 style="color: red;">Quick Links</h2>
+    <ul style="list-style: none; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+      <li><a href="#calendar">School Calendar</a></li>
+      <li><a href="admissions.html">Online Application</a></li>
+       <li><a href="admissions.html#fees">School Fees Structure</a></li> 
+       <li><a href="news.html">School News</a></li>
+      <li><a href="news.html">School News</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html#faqs">❓FAQs</a></li>
+    </ul>
+  </section>
+
+    <!-- Footer -->
+  <footer class="bg-light text-center py-3 small text-muted">
+      <div class="container">
+        <p><b>Contact Us!!</b></p>
+    <p class="mb-1">📞 Headteacher: Mr. Ssemakula David – +256 701 234567</p>
+    <p class="mb-1">📞 Deputy Headteacher: Ms. Namukasa Grace – +256 772 345678</p>
+    <p class="mb-1">📞 Director of Studies: Mr. Kato Emmanuel – +256 784 456789</p>
+     <br>
+    &copy; 2025 Outreach Secondary School. All rights reserved.
+    <p>Email: info@outreachschool.org | Tel: +256 701 422 100</p>
+    <p>Location: Baggala, Mpigi District, Uganda</p>
+  </footer>
+  <!-- hero-slider -->
+  <script>
+  const slides = document.querySelectorAll('.hero-slide');
+  const prevBtn = document.querySelector('.hero-nav.prev');
+  const nextBtn = document.querySelector('.hero-nav.next');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  setInterval(nextSlide, 5000); // auto-slide every 5 seconds
+
+function searchSite(e) {
+    e.preventDefault();
+    const query = document.getElementById('siteSearch').value.toLowerCase();
+    const bodyText = document.body.innerText.toLowerCase();
+
+    if (bodyText.includes(query)) {
+      alert('✅ Match found on this page: "' + query + '"');
+    } else {
+      alert('❌ No match found for: "' + query + '"');
+    }
+  }
+
+    function toggleMenu() {
+    document.getElementById("navOverlay").classList.remove("d-none");
+  }
+
+  function closeMenu() {
+    document.getElementById("navOverlay").classList.add("d-none");
+  }
+</script>
+
+<button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" 
+        class="btn btn-warning position-fixed bottom-0 end-0 m-4 shadow" 
+        aria-label="Back to top">
+  ⬆ Top
+</button>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+<script src="preloader.js"></script>
+</body>
+</html>

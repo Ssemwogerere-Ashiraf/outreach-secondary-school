@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Academics - Outreach SS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="/image/x-icon" href="favicon-32x32.png">
+   <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex: 1; }
+    .subject-img {
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    
+    <div class="container">
+      <a class="navbar-brand" href="index.html"> <strong><b style="font-weight: bolder; font-size: xx-large; color: red;">O</b>UTREACH <b  style="font-weight: bolder; font-size: xx-large; color: red;">S</b>ECONDARY <b  style="font-weight: bolder; font-size: xx-large; color: red;">S</b>CHOOL</strong></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="academics.html">Academics</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="rules.html">Rules</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-secondary text-white text-center py-4">
+    <h1>Academics</h1>
+    <p class="lead">Subjects and Vocational Training Offered at Outreach SS</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container py-5">
+
+    <!-- Subjects Offered -->
+    <section class="mb-5">
+      <h3 class="text-left mb-4" style="color: red;"><b>Subjects Offered</b></h3>
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Mathematics</li>
+            <li class="list-group-item">English Language & Literature</li>
+            <li class="list-group-item">Biology, Chemistry, Physics</li>
+            <li class="list-group-item">Geography, History, CRE</li>
+            <li class="list-group-item">ICT & Computer Studies</li>
+            <li class="list-group-item">Entrepreneurship</li>
+          </ul>
+        </div>
+     
+        <div class="col-md-6">
+          <h3 class="mb-4 text-left" style="color: red;"><b>Vocational Training Courses</b></h3>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Agriculture</li>
+            <li class="list-group-item">Art & Design</li>
+            <li class="list-group-item">Technology & Design</li>
+            <li class="list-group-item">Home Economics</li>
+            <li class="list-group-item">Performing Arts</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+<section>
+  <h3 class="text-center mb-4">Academic Life in Pictures</h3>
+  <div class="row g-4">
+    <div class="col-4">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-bs-img="science-lab.avif" data-bs-caption="Science Laboratory">
+        <img src="science-lab.avif" alt="Science Laboratory" class="img-fluid subject-img shadow-sm">
+      </a>
+    </div>
+    <div class="col-4">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-bs-img="computer-studies.webp" data-bs-caption="ICT & Computer Studies">
+        <img src="computer-studies.webp" alt="Computer Studies" class="img-fluid subject-img shadow-sm">
+      </a>
+    </div>
+    <div class="col-4">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-bs-img="agriculture.jpg" data-bs-caption="Agriculture Training">
+        <img src="agriculture.jpg" alt="Agriculture Class" class="img-fluid subject-img shadow-sm">
+      </a>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+<!-- Lightbox Modal -->
+<div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark">
+      <div class="modal-body text-center">
+        <img id="lightboxImage" src="" class="img-fluid rounded" alt="">
+        <p id="lightboxCaption" class="text-white mt-2"></p>
+
+        <!-- Arrows -->
+        <a class="position-absolute top-50 start-0 translate-middle-y text-white fs-2 px-3"
+           href="#" id="prevArrow">&#10094;</a>
+        <a class="position-absolute top-50 end-0 translate-middle-y text-white fs-2 px-3"
+           href="#" id="nextArrow">&#10095;</a>
+      </div>
+      <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close" style="background-color: rgb(213, 251, 0);"></button>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <footer class="bg-dark text-center py-3 small text-muted">
+      <div class="container">
+        <p><b>Contact Us!!</b></p>
+    <p class="mb-1"  style="color: #fff;">📞 Headteacher: Mr. Ssemakula David - +256 701 234567</p>
+    <p class="mb-1"  style="color: #fff;">📞 Deputy Headteacher: Ms. Namukasa Grace - +256 772 345678</p>
+    <p class="mb-1"  style="color: #fff;">📞 Director of Studies: Mr. Kato Emmanuel - +256 784 456789</p>
+     <br >
+    <b  style="color: #fff;">&copy; 2025 Outreach Secondary School. All rights reserved.</b>
+    <p  style="color: #fff;">Email: info@outreachschool.org <b style="color: rgb(255, 170, 0);">|</b> Tel: +256 701 422 100</p>
+    <p  style="color: #fff;">Location: Baggala, Mpigi District, Uganda</p>
+  </footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- script -->
+  <script>
+  const galleryItems = document.querySelectorAll('[data-bs-toggle="modal"]');
+  let currentIndex = 0;
+
+  const lightboxModal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImage');
+  const modalCaption = document.getElementById('lightboxCaption');
+
+  // Show modal with clicked image
+  lightboxModal.addEventListener('show.bs.modal', function (event) {
+    const trigger = event.relatedTarget;
+    currentIndex = Array.from(galleryItems).indexOf(trigger);
+    updateModal(trigger);
+  });
+
+  function updateModal(trigger) {
+    modalImg.src = trigger.getAttribute('data-bs-img');
+    modalCaption.textContent = trigger.getAttribute('data-bs-caption');
+  }
+
+  // Next arrow
+  document.getElementById('nextArrow').addEventListener('click', function (e) {
+    e.preventDefault();
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+    updateModal(galleryItems[currentIndex]);
+  });
+
+  // Previous arrow
+  document.getElementById('prevArrow').addEventListener('click', function (e) {
+    e.preventDefault();
+    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    updateModal(galleryItems[currentIndex]);
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function (e) {
+    if (!lightboxModal.classList.contains('show')) return;
+    if (e.key === 'ArrowRight') {
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      updateModal(galleryItems[currentIndex]);
+    }
+    if (e.key === 'ArrowLeft') {
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      updateModal(galleryItems[currentIndex]);
+    }
+  });
+</script>
+
+</body>
+</html>

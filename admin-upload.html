@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Upload — Outreach Gallery (Node)</title>
+  <link rel="icon" type="/image/x-icon" href="favicon-32x32.png">
+ <!-- bootstrap cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .admin-card{max-width:720px;margin:24px auto;padding:18px;border-radius:8px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+    label{display:block;margin:8px 0 4px;font-weight:600}
+    input[type="text"], input[type="file"], textarea, select{width:100%;padding:10px;border:1px solid #e6e6e6;border-radius:6px}
+    .row{display:flex;gap:12px;align-items:center}
+ 
+    #preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background: radial-gradient(circle at center,
+              #ff8c00 0%,   /* Dark Orange */
+              #8b0000 50%,  /* Dark Red */
+              #9e4b03 100%  /* Dark Yellow */
+            );
+  animation: shinePulse 3s infinite alternate;
+  transition: opacity 0.8s ease;
+}
+
+#preloader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes shinePulse {
+  0%   { filter: brightness(0.7); }
+  50%  { filter: brightness(1.2); }
+  100% { filter: brightness(0.9); }
+}
+
+.overlay-text {
+  background: rgba(0,0,0,0.6);
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+}
+
+ </style>
+</head>
+<body>
+<!-- header -->
+  <header class="bg-light shadow-sm" style="padding: 0; margin-bottom: 0%; background-color: rgb(244, 197, 6);">
+     <a style="color: rgb(255, 200, 0); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger; margin-top: auto;"> <img src="logo.png" alt="Outreach Logo" class="logo" height="100" width="100">
+    <strong><b style="font-weight: bolder; font-size: xx-large; color: red;">O</b>UTREACH <b  style="font-weight: bolder; font-size: xx-large; color: red;">S</b>ECONDARY <b  style="font-weight: bolder; font-size: xx-large; color: red;">S</b>CHOOL</strong>
+      </a>
+  <nav class="navbar navbar-light container position-relative" style="margin-top: 10px;">
+    <a class="navbar-brand fw-bold" href="index.html"></a>
+    <button class="navbar-toggler" type="button" onclick="toggleMenu()" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <!-- Custom Nav Overlay -->
+  <div id="navOverlay" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-75 d-flex justify-content-center align-items-center z-3">
+    <div class="bg-white bg-opacity-75 rounded p-4 text-center">
+      <a href="index.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Home</a>
+      <a href="news.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">News</a>
+      <a href="gallery.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Gallery</a>
+      <a href="contact.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Contact</a>
+      <a href="admissions.html" class="d-block nav-link fw-bold" onclick="closeMenu()">Admissions</a>
+    </div>
+  </div>
+</header>
+
+  <main class="admin-card" role="main">
+    <h1>Upload Gallery Image (Admin)</h1>
+    <p class="small-note">This form posts to <code>/admin/upload</code>. The server requires Basic Auth. Use only on an HTTPS admin connection.</p>
+
+    <form id="adminUpload" action="/admin/upload" method="post" enctype="multipart/form-data">
+      <label for="image">Image file *</label>
+      <input id="image" name="image" type="file" accept="image/*" required>
+
+      <label for="title">Title</label>
+      <input id="title" name="title" type="text" maxlength="150" placeholder="Short title for the photo">
+
+      <label for="caption">Caption</label>
+      <textarea id="caption" name="caption" rows="3" maxlength="800" placeholder="Short caption or description"></textarea>
+
+      <label for="category">Category</label>
+      <select id="category" name="category">
+        <option value="uncategorized">Uncategorized</option>
+        <option value="dormitory">Dormitory</option>
+        <option value="computer_lab">Computer Lab</option>
+        <option value="farm">School Farm</option>
+        <option value="vocational">Vocational</option>
+        <option value="students">Students</option>
+      </select>
+
+      <label for="tags">Tags (comma separated)</label>
+      <input id="tags" name="tags" type="text" placeholder="construction, donors, volunteers">
+
+      <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+        <button type="submit" class="btn">Upload</button>
+        <button type="reset" class="btn alt">Reset</button>
+        <div id="uploadStatus" class="small-note" aria-live="polite"></div>
+      </div>
+    </form>
+
+    <hr />
+    <p class="small-note">Server setup reminder: set environment variables <strong>ADMIN_USER</strong> and <strong>ADMIN_PASS</strong> on the Node server. Protect this page via HTTPS and restrict access to admin users only.</p>
+  </main>
+
+  <script>
+    // Optional UX: show simple client-side file size/type checks before upload
+    document.getElementById('adminUpload').addEventListener('submit', function(e){
+      const f = document.getElementById('image').files[0];
+      const status = document.getElementById('uploadStatus');
+      status.textContent = '';
+      if(!f){ e.preventDefault(); status.textContent = 'Please choose a file.'; return; }
+      if(f.size > 5 * 1024 * 1024){ e.preventDefault(); status.textContent = 'File exceeds 5MB limit.'; return; }
+      // allow common image types
+      if(!/image\/(jpeg|png|webp|gif)/.test(f.type)){ e.preventDefault(); status.textContent = 'Use JPEG/PNG/WebP/GIF images only.'; return; }
+      // Basic auth prompt is handled by the browser when the server responds 401
+    });
+
+    function toggleMenu() {
+    document.getElementById("navOverlay").classList.remove("d-none");
+  }
+
+  function closeMenu() {
+    document.getElementById("navOverlay").classList.add("d-none");
+  }
+  </script>
+
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

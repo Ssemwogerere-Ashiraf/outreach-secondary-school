@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admissions Wizard - Outreach SS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .step { display: none; }
+    .step.active { display: block; }
+    .progress-step { width: 33.33%; }
+     #preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background: radial-gradient(circle at center,
+             #b3589f
+  );
+  animation: shinePulse 3s infinite alternate;
+  transition: opacity 0.8s ease;
+}
+
+#preloader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes shinePulse {
+  0%   { filter: brightness(0.7); }
+  50%  { filter: brightness(1.2); }
+  100% { filter: brightness(0.9); }
+}
+
+.overlay-text {
+  background: rgba(0,0,0,0.6);
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+}
+ </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-light shadow-sm" style="padding: 0; margin-bottom: 0%; background-color: rgb(244, 197, 6);">
+     <a style="color: rgb(255, 200, 0); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger; margin-top: auto;"> <img src="logo.png" alt="Outreach Logo" class="logo" height="100" width="100">
+    <strong><b style="font-weight: bolder; font-size: xx-large; color: red;">O</b>UTREACH <b  style="font-weight: bolder; font-size: xx-large; color: red;">S</b>ECONDARY <b  style="font-weight: bolder; font-size: xx-large; color: red;">S</b>CHOOL</strong>
+      </a>
+  <nav class="navbar navbar-light container position-relative" style="margin-top: 10px;">
+    <a class="navbar-brand fw-bold" href="index.html"></a>
+    <button class="navbar-toggler" type="button" onclick="toggleMenu()" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <!-- Custom Nav Overlay -->
+  <div id="navOverlay" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-75 d-flex justify-content-center align-items-center z-3">
+    <div class="bg-white bg-opacity-75 rounded p-4 text-center">
+      <a href="index.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Home</a>
+      <a href="news.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">News</a>
+      <a href="gallery.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Gallery</a>
+      <a href="contact.html" class="d-block mb-3 nav-link fw-bold" onclick="closeMenu()">Contact</a>
+      <a href="admissions.html" class="d-block nav-link fw-bold" onclick="closeMenu()">Admissions</a>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Title -->
+  <section class="bg-cream text-dark text-center py-5">
+    <div class="container">
+      <h2 class="display-5" style="color: rgb(255, 64, 0);"><b>Admission Form</b></h2>
+      <p class="lead" style="color: blueviolet;"><b>Apply to Outreach SS in three easy steps.</b></p>
+    </div>
+  </section>
+
+  <!-- Progress Bar -->
+  <div class="container">
+    <div class="progress mb-4">
+      <div id="progressBar" class="progress-bar progress-step bg-success" role="progressbar" style="width: 33%"></div>
+    </div>
+  </div>
+
+  <!-- Wizard Form -->
+  <main class="container-sm pb-5 px-3 text-center" style="width: 70%; background-color: rgb(254, 248, 248); border: 0.9px solid rgb(252, 176, 0); border-radius: 2%;">
+    <form id="wizardForm" action="https://formspree.io/f/yourFormID" method="POST" enctype="multipart/form-data">
+
+      <!-- Step 1 -->
+      <div class="step active">
+        <h4>Step 1: Personal Information</h4>
+        <input type="hidden" name="_redirect" value="none">
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" name="fullName" required>
+        </div>
+        <div class="mb-3">
+          <label for="dob" class="form-label">Date of Birth</label>
+          <input type="date" class="form-control" name="dob" required>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="nextStep()">Next</button>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step">
+        <h4>Step 2: Academic Background</h4>
+        <div class="mb-3">
+          <label for="lastSchool" class="form-label">Last School Attended</label>
+          <input type="text" class="form-control" name="lastSchool" required>
+        </div>
+        <div class="mb-3">
+          <label for="examType" class="form-label">Exam Type</label>
+          <select class="form-select" name="examType" required>
+            <option value="">Select</option>
+            <option value="PLE">PLE</option>
+            <option value="UCE">UCE</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="examFile" class="form-label">Upload Exam Results (PDF or Image)</label>
+          <input type="file" class="form-control" name="examFile" accept=".pdf,.jpg,.jpeg,.png" required>
+        </div>
+        <button type="button" class="btn btn-secondary me-2" onclick="prevStep()">Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextStep()">Next</button>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step">
+        <h4>Step 3: Parent/Guardian Details</h4>
+        <div class="mb-3">
+          <label for="guardianName" class="form-label">Guardian Name</label>
+          <input type="text" class="form-control" name="guardianName" required>
+        </div>
+        <div class="mb-3">
+          <label for="guardianPhone" class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" name="guardianPhone" required>
+        </div>
+        <button type="button" class="btn btn-secondary me-2" onclick="prevStep()">Back</button>
+        <button type="submit" class="btn btn-success">Submit Application</button>
+      </div>
+
+    </form>
+
+    <!-- Confirmation -->
+    <div id="confirmation" class="alert alert-success mt-4 d-none">
+      ✅ Thank you! Your application has been submitted successfully.
+    </div>
+  </main>
+
+    <!-- Footer -->
+  <footer class="bg-light text-center py-3 small text-muted">
+      <div class="container">
+        <p><b>Contact Us!!</b></p>
+    <p class="mb-1">📞 Headteacher: Mr. Ssemakula David - +256 701 234567</p>
+    <p class="mb-1">📞 Deputy Headteacher: Ms. Namukasa Grace - +256 772 345678</p>
+    <p class="mb-1">📞 Director of Studies: Mr. Kato Emmanuel - +256 784 456789</p>
+     <br>
+    &copy; 2025 Outreach Secondary School. All rights reserved.
+    <p>Email: info@outreachschool.org | Tel: +256 701 422 100</p>
+    <p>Location: Baggala, Mpigi District, Uganda</p>
+  </footer>
+  <!-- Scripts -->
+  <script>
+  let currentStep = 0;
+  const steps = document.querySelectorAll(".step");
+  const progressBar = document.getElementById("progressBar");
+
+  function showStep(index) {
+    steps.forEach((step, i) => step.classList.toggle("active", i === index));
+    progressBar.style.width = ((index + 1) / steps.length * 100) + "%";
+  }
+
+  function validateStep(index) {
+    const inputs = steps[index].querySelectorAll("input, select");
+    for (let input of inputs) {
+      if (!input.checkValidity()) {
+        input.classList.add("is-invalid");
+        input.reportValidity();
+        return false;
+      } else {
+        input.classList.remove("is-invalid");
+      }
+    }
+    return true;
+  }
+
+  function nextStep() {
+    if (validateStep(currentStep)) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  }
+
+  function prevStep() {
+    if (currentStep > 0) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  }
+
+  document.getElementById("wizardForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    if (!validateStep(currentStep)) return;
+
+    const confirmSubmit = confirm("Is the information you've provided clear and relevant?");
+    if (!confirmSubmit) return;
+
+    const formData = new FormData(this);
+
+    fetch(this.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        this.classList.add("d-none");
+        document.getElementById("confirmation").classList.remove("d-none");
+      } else {
+        alert("There was a problem submitting your application.");
+      }
+    });
+  });
+
+   function toggleMenu() {
+    document.getElementById("navOverlay").classList.remove("d-none");
+  }
+
+  function closeMenu() {
+    document.getElementById("navOverlay").classList.add("d-none");
+  }
+</script>
+
+<!-- bootstrap -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
